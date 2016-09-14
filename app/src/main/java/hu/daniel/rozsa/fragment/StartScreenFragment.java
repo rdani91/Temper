@@ -7,7 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import hu.rozsa.daniel.temper.R;
+import hu.rozsa.daniel.tender.R;
+
 
 public class StartScreenFragment extends Fragment {
     public static StartScreenFragment getInstance() {

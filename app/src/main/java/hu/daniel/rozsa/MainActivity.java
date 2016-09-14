@@ -6,7 +6,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
 import hu.daniel.rozsa.fragment.StartScreenFragment;
-import hu.rozsa.daniel.temper.R;
+import hu.rozsa.daniel.tender.R;
 
 public class MainActivity extends AppCompatActivity {
 
