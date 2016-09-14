@@ -1,0 +1,23 @@
+package hu.daniel.rozsa.fragment;
+
+import android.app.Fragment;
+import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+import hu.rozsa.daniel.temper.R;
+
+public class StartScreenFragment extends Fragment {
+    public static StartScreenFragment getInstance() {
+        return new StartScreenFragment();
+    }
+
+
+    @Nullable
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.fragment_start_screen, container, true);
+    }
+}
