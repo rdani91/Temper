@@ -8,17 +8,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name="hu.daniel.rozsa.MainActivity">
+        <activity android:name="hu.daniel.rozsa.activity.MainActivity">
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER"/>
                 <action android:name="android.intent.action.MAIN"/>
 
             </intent-filter>
         </activity>
-
-        <activity
-            android:name="hu.daniel.rozsa.TestActivity"
-            android:screenOrientation="sensorLandscape"/>
 
     </application>
 
