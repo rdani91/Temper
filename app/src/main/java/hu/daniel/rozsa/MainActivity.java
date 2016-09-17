@@ -1,15 +1,15 @@
 package hu.daniel.rozsa;
 
-import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.TextView;
 
-import hu.daniel.rozsa.fragment.StartScreenFragment;
 import hu.rozsa.daniel.tender.R;
 
 public class MainActivity extends AppCompatActivity {
-
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -17,18 +17,21 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
 
-        loadStartScreenFragment();
-    }
+        TextView sampleTextView = (TextView) findViewById(R.id.tvSampleText);
+        sampleTextView.setText("Sample text - changed from code");
 
-    private void loadStartScreenFragment() {
-        StartScreenFragment startScreenFragment = StartScreenFragment.getInstance();
-        loadFragment(startScreenFragment);
-    }
+        findViewById(R.id.btnSecondActivity).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, TestActivity.class));
+            }
+        });
 
-    private void loadFragment(Fragment fragmentToLoad) {
-        getFragmentManager()
-                .beginTransaction()
-                .replace(R.id.fragmentContainer, fragmentToLoad)
-                .commit();
+        findViewById(R.id.btnKillActivity).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
     }
 }

@@ -1,12 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <FrameLayout
-        android:id="@+id/fragmentContainer"
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/my_frenchy"/>
+
+    <TextView
+        android:id="@+id/tvSampleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sample text"
+        android:textSize="@dimen/sample_text_size"/>
+
+    <LinearLayout
+        android:gravity="center"
+        android:layout_marginTop="20dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
-    
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btnSecondActivity"
+            style="@style/Widget.AppCompat.Light.ActionButton"
+            android:text="Second activity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/btnKillActivity"
+            style="@style/Widget.AppCompat.Light.ActionButton"
+            android:text="Kill the activity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
 </LinearLayout>
