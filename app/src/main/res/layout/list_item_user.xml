@@ -5,32 +5,49 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <ImageView
+        android:id="@+id/imgProfilePicture"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_margin="16dp"/>
+
+
     <TextView
-        android:id="@+id/tvUserName"
+        android:id="@+id/tvAge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="username"
-        android:textSize="30sp"/>
+        android:layout_alignBottom="@id/imgProfilePicture"
+        android:layout_toRightOf="@id/imgProfilePicture"
+        android:gravity="bottom"
+        android:text="22 years old"
+        android:textSize="16sp"/>
 
     <TextView
         android:id="@+id/tvLocation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/tvUserName"
-        android:layout_marginTop="10dp"
+        android:layout_above="@id/tvAge"
+        android:layout_toRightOf="@id/imgProfilePicture"
         android:text="Location"
-        android:textSize="20sp"/>
+        android:textSize="16sp"/>
 
     <TextView
-        android:textSize="20sp"
-        android:gravity="bottom"
-        android:layout_marginLeft="20dp"
-        android:id="@+id/tvAge"
+        android:id="@+id/tvUserName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/tvUserName"
-        android:layout_alignBottom="@id/tvLocation"
-        android:layout_toRightOf="@id/tvLocation"
-        android:text="22"/>
+        android:layout_above="@id/tvLocation"
+        android:layout_toRightOf="@id/imgProfilePicture"
+        android:text="username"
+        android:textSize="22sp"/>
+
+
+    <TextView
+        android:id="@+id/tvOnline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:text="Online"/>
+
 
 </RelativeLayout>

@@ -46,8 +46,7 @@ public class UserListFragment extends Fragment {
         lvUsers.setAdapter(userAdapter);
 
         Logic.getInstance()
-             .getGatewayFactory()
-             .getUserGateway()
+             .getNearbyUsersInteractor()
              .getNearbyUsers(User.Gender.FEMALE, new OnCompleteResult<List<User>>() {
                  @Override
                  public void onSuccess(List<User> result) {
