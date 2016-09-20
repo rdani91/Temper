@@ -11,12 +11,10 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
 import android.widget.Toast;
 
 import hu.daniel.rozsa.Logic;
-import hu.daniel.rozsa.fragment.UserListFragment;
+import hu.daniel.rozsa.binding.BindingFragment;
 import hu.rozsa.daniel.tender.R;
 
 public class MainActivity extends AppCompatActivity {
@@ -58,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
 
         leftDrawer.addDrawerListener(drawerToggle);
 
-        loadFragment(UserListFragment.newInstance());
+        loadFragment(new BindingFragment());
     }
 
 
