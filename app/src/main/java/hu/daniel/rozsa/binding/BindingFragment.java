@@ -2,6 +2,7 @@ package hu.daniel.rozsa.binding;
 
 import android.app.Fragment;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,8 +24,21 @@ public class BindingFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         FragmentBindingBinding binding = FragmentBindingBinding.inflate(inflater, container, false);
         View rootView = binding.getRoot();
-        BindingUser user = new BindingUser();
-        user.userName = "Pisti";
+        final BindingUser user = new BindingUser();
+        user.userName.set("Pisti");
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                SystemClock.sleep(5000);
+                getActivity().runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        user.userName.set("John Snow");
+                    }
+                });
+            }
+        }).start();
         binding.setUser(user);
 
         return rootView;

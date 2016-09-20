@@ -1,5 +1,7 @@
 package hu.daniel.rozsa.binding;
 
+import android.databinding.ObservableField;
+
 public class BindingUser {
-    public String userName;
+    public ObservableField<String> userName = new ObservableField<>();
 }
