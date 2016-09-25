@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/login_bg"
+    android:orientation="vertical">
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/etUserName"
+        style="@style/loginInputLayout"
+        android:layout_marginTop="32dp">
+
+        <android.support.design.widget.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Username"
+            android:inputType="text"/>
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/etPassword"
+        style="@style/loginInputLayout"
+        android:layout_below="@id/etUserName"
+        android:layout_marginTop="16dp">
+
+        <android.support.design.widget.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="password"
+            android:inputType="textPassword"/>
+    </android.support.design.widget.TextInputLayout>
+
+    <CheckBox
+        android:id="@+id/cbRememberMe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etPassword"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="8dp"
+        android:text="Remember me"/>
+
+    <LinearLayout
+        android:id="@+id/btnContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cbRememberMe"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnLogin"
+            style="@style/loginButton"
+            android:text="Log In"/>
+
+        <Button
+            android:id="@+id/btnRegister"
+            style="@style/loginButton"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
+            android:text="Sign Up"/>
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/tvFbLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnContainer"
+        android:gravity="center_horizontal"
+        android:text="Login with facebook"
+        android:textColor="@android:color/white"/>
+
+
+</RelativeLayout>

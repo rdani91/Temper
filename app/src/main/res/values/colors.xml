@@ -3,4 +3,13 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="lightGray">#898989</color>
+    <color name="tunderBlue">#3f51b5</color>
+
+    <!-- Login colors-->
+    <color name="login_bg">#2e3237</color>
+    <color name="login_field_bg">#3b4148</color>
+    <color name="login_button_bg">#ea4c88</color>
+    <color name="login_field_text">#4c5157</color>
+
 </resources>

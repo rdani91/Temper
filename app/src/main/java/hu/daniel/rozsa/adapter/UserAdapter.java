@@ -15,7 +15,7 @@ import hu.rozsa.daniel.tender.R;
 public class UserAdapter extends BaseAdapter {
 
 
-    List<User> users;
+    private List<User> users;
 
     public UserAdapter(List<User> nearbyUsers) {
         users = nearbyUsers;

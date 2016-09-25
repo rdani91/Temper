@@ -3,6 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/tunderBlue"
     android:orientation="vertical">
 
     <ImageView
@@ -45,9 +46,10 @@
         android:id="@+id/tvOnline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:text="Online"
+        android:layout_alignBottom="@+id/tvAge"
         android:layout_alignParentRight="true"
-        android:text="Online"/>
+        android:layout_alignParentEnd="true"/>
 
 
 </RelativeLayout>
