@@ -3,10 +3,10 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/tunderBlue"
+    android:background="@android:color/white"
     android:orientation="vertical">
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/imgProfilePicture"
         android:layout_width="64dp"
         android:layout_height="64dp"
@@ -17,6 +17,7 @@
         android:id="@+id/tvAge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
         android:layout_alignBottom="@id/imgProfilePicture"
         android:layout_toRightOf="@id/imgProfilePicture"
         android:gravity="bottom"
@@ -27,6 +28,7 @@
         android:id="@+id/tvLocation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
         android:layout_above="@id/tvAge"
         android:layout_toRightOf="@id/imgProfilePicture"
         android:text="Location"
@@ -36,6 +38,7 @@
         android:id="@+id/tvUserName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
         android:layout_above="@id/tvLocation"
         android:layout_toRightOf="@id/imgProfilePicture"
         android:text="username"
@@ -47,6 +50,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Online"
+        android:textColor="@android:color/holo_green_light"
         android:layout_alignBottom="@+id/tvAge"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"/>

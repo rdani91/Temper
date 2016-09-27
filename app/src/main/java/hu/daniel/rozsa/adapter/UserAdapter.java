@@ -1,6 +1,7 @@
 package hu.daniel.rozsa.adapter;
 
 import android.content.Context;
+import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +10,7 @@ import android.widget.TextView;
 
 import java.util.List;
 
+import de.hdodenhof.circleimageview.CircleImageView;
 import hu.daniel.rozsa.logic.entity.User;
 import hu.rozsa.daniel.tender.R;
 
@@ -40,14 +42,15 @@ public class UserAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup viewGroup) {
         ViewHolder holder;
-
+        Context context = viewGroup.getContext();
         if (convertView == null) {
             holder = new ViewHolder();
-            Context context = viewGroup.getContext();
-            convertView = LayoutInflater.from(context).inflate(R.layout.list_item_user, viewGroup, false);
+            convertView = LayoutInflater.from(context)
+                                        .inflate(R.layout.list_item_user, viewGroup, false);
             holder.tvAge = (TextView) convertView.findViewById(R.id.tvAge);
             holder.tvLocation = (TextView) convertView.findViewById(R.id.tvLocation);
             holder.tvName = (TextView) convertView.findViewById(R.id.tvUserName);
+            holder.imgProfile = (CircleImageView) convertView.findViewById(R.id.imgProfilePicture);
             convertView.setTag(holder);
         } else {
             holder = (ViewHolder) convertView.getTag();
@@ -57,6 +60,7 @@ public class UserAdapter extends BaseAdapter {
         holder.tvName.setText(currentUser.name);
         holder.tvAge.setText(String.valueOf(currentUser.age));
         holder.tvLocation.setText(currentUser.location);
+        holder.imgProfile.setImageDrawable(ContextCompat.getDrawable(context, currentUser.profileResId));
 
         return convertView;
     }
@@ -66,5 +70,6 @@ public class UserAdapter extends BaseAdapter {
         TextView tvName;
         TextView tvAge;
         TextView tvLocation;
+        CircleImageView imgProfile;
     }
 }

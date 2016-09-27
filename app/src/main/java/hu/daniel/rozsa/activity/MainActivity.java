@@ -11,14 +11,10 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import java.io.Serializable;
 
 import hu.daniel.rozsa.Logic;
+import hu.daniel.rozsa.fragment.UserDetailScreen;
 import hu.daniel.rozsa.fragment.UserListFragment;
 import hu.daniel.rozsa.logic.entity.User;
 import hu.rozsa.daniel.tender.R;
@@ -80,8 +76,14 @@ public class MainActivity extends AppCompatActivity {
         if (leftDrawer.isDrawerOpen(GravityCompat.START)) {
             leftDrawer.closeDrawer(GravityCompat.START);
         } else {
-            super.onBackPressed();
-        }    }
+
+            if (getFragmentManager().getBackStackEntryCount() > 0) {
+                getFragmentManager().popBackStack();
+            } else {
+                super.onBackPressed();
+            }
+        }
+    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -108,7 +110,16 @@ public class MainActivity extends AppCompatActivity {
     private void loadFragment(Fragment f) {
         getFragmentManager()
                 .beginTransaction()
+                .setCustomAnimations(R.animator.fragment_enter,
+                                     R.animator.fragment_exit,
+                                     R.animator.fragment_enter_pop,
+                                     R.animator.fragment_exit_pop)
                 .replace(R.id.fragmentContainer, f)
+                .addToBackStack(f.toString())
                 .commit();
+    }
+
+    public void moveToUserDetailScreen(User selectedUser) {
+        loadFragment(UserDetailScreen.newInstance(selectedUser));
     }
 }
