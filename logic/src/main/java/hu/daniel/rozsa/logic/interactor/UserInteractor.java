@@ -18,10 +18,10 @@ public class UserInteractor {
 
     public void login(String userName, String password, OnCompleteResult<User> onCompleteResult) {
 
-        if (userName.isEmpty() || password.isEmpty()) {
-            onCompleteResult.onError("Please fill both fields");
-            return;
-        }
+//        if (userName.isEmpty() || password.isEmpty()) {
+//            onCompleteResult.onError("Please fill both fields");
+//            return;
+//        }
 
         User fakeUser = new User();
         fakeUser.name = userName;
