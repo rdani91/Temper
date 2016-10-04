@@ -41,6 +41,7 @@
         android:layout_gravity="start"
         android:background="@android:color/white"
         android:choiceMode="singleChoice"
+        app:itemTextColor="@android:color/black"
         app:headerLayout="@layout/nav_header_main"
         app:menu="@menu/activity_main_drawer"/>
 
